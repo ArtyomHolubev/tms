@@ -9,4 +9,4 @@ while random_number != number:
         number = int(input(("Маловато будет: ")))
     else:
         number = int(input(("Перебор: ")))
-print('Угадал! Молодец!')
+print(f'Угадал! Молодец! Да, я загадал число {number}')

@@ -11,7 +11,7 @@ dict_js = {
 }
 
 with open(
-    current_dir.joinpath("json_file_my.json"),
+    current_dir.joinpath("json_file.json"),
     mode="w"
 ) as w_file:
     json.dump(dict_js, w_file, indent=4)

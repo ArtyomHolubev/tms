@@ -1,0 +1,71 @@
+def sum(a, b):
+    result = a + b
+    return result
+
+
+def subtract(a, b):
+    result = a - b
+    return result
+
+
+def multiply(a, b):
+    result = a * b
+    return result
+
+
+def divide(a, b):
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        print(f"На ноль делить нельзя!")
+    else:
+        return result
+
+
+def calculate(a, b, operation):
+    result = None
+    try:
+        if operation == '+':
+            result = sum(a, b)
+        elif operation == '-':
+            result = subtract(a, b)
+        elif operation == '/':
+            result = divide(a, b)
+        elif operation == '*':
+            result = multiply(a, b)
+        else:
+            raise Exception('Неизвестная операция')
+    except Exception as err:
+        print(err)
+
+    return result
+
+
+def ask_operation():
+    message = '''
+Пожалуйста, введите символ операции, которую вы хотите совершить и нажмите Enter:
+
++ : Сложение
+- : Вычитание
+/ : Деление
+* : Умножение
+
+Ваш выбор:
+   '''
+    operation = input(message)
+    return operation
+
+
+def run_calculator():
+    try:
+        a = int(input('Введите первое целое число: '))
+        b = int(input('Введите второе целое число: '))
+    except ValueError:
+        print(f"Вы ввели недопустимые значения!")
+    else:
+        operation = ask_operation()
+        result = calculate(a, b, operation)
+        print(f'Результат вычислений: {result}')
+
+
+run_calculator()

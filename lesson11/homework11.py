@@ -31,7 +31,8 @@ class RandomValueIterator:
             self._curr_index += 1
             return result
         else:
-            raise StopIteration("Iterator is stopped!")
+            print("Iterator is stopped!")
+            raise StopIteration
 
 my_limit = int(input("Введите лимит: "))
 my_random = RandomValue(limit=my_limit)

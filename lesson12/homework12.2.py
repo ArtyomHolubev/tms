@@ -17,6 +17,7 @@ class RandomValue:
         if self._curr_index < self._limit:
             for element in self._some_list:
                 yield element
+        return print("iterator is stopped")
 
 
 my_limit = int(input("Введите лимит: "))

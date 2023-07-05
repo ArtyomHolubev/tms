@@ -1,10 +1,10 @@
 import re
 
-regex_phone_pattern = r"\++[\d]{1,3}+[-]+[\d]{2}+[-]+[\d]{5,7}"
-regex_phone = re.compile(regex_phone_pattern)
+# regex_phone_pattern = r"\++[\d]{1,3}+[-]+[\d]{2}+[-]+[\d]{5,7}"
+regex_phone = re.compile(r"\++\d{1,3}-+\d{2}-+\d{5,7}")
 
 
-def test_valid_phone_numbers(regex_compiled):
+def valid_phone_numbers(regex_compiled):
     valid = (
         "+375-29-7776655",
         "+37-29-7776655",
@@ -17,7 +17,7 @@ def test_valid_phone_numbers(regex_compiled):
         assert res.group() == n
 
 
-def test_invalid_phone_numbers(regex_compiled):
+def invalid_phone_numbers(regex_compiled):
     invalid = (
         "",
         "test12345test"
@@ -40,5 +40,5 @@ def test_invalid_phone_numbers(regex_compiled):
         assert regex_compiled.fullmatch(n2) is None
 
 
-valid = test_valid_phone_numbers(regex_phone)
-invalid = test_invalid_phone_numbers(regex_phone)
+valid = valid_phone_numbers(regex_phone)
+invalid = invalid_phone_numbers(regex_phone)

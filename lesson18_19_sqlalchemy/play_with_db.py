@@ -163,8 +163,7 @@ async def update_title_add_comment(post_id: int, new_comment: str):
                                   user_id=first_comment.user_id, post_id=first_comment.post_id)
         updated_comments.append(updated_comment)
 
-    new_comment_entity = Comment(id=5, title=new_comment, user_id=1, post_id=post_id)
-
+    new_comment_entity = Comment(id=7, title=new_comment, user_id=1, post_id=post_id)
 
     update_result = await database_worker.update_post_by_id(post_id=post_id, updated_comments=updated_comments,
                                                             new_comment=new_comment_entity)
